@@ -1,7 +1,5 @@
 {
-  "status": "pending",
-  "product": "SNAPTURE",
-  "channel": "stable",
   "version": "0.3.2",
-  "message": "SNAPTURE compact capture UI source committed. No tested macOS arm64 component has been published yet."
+  "download_url": "https://raw.githubusercontent.com/gambans/nytro-audio-capture-releases/main/r-91f27ac004f8/p-91f27ac004f8-0.3.2.zip",
+  "sha256": "9d69b1a301c13ae422b04386c5ba3b5b776a768588d0e5e9ef0d09de7052368a"
 }
