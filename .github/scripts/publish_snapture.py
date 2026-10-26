@@ -28,7 +28,7 @@ with tempfile.TemporaryDirectory() as temp:
     assert info["CFBundleShortVersionString"] == version
     assert info["CFBundleExecutable"] == "Snapture"
     components = info["AudioComponents"]
-    assert any(c["type"] == "aufx" and c["subtype"] == "Snpt" and c["manufacturer"] == "Nytr" and c["name"].endswith("Snapture") for c in components)
+    assert any(c["type"] == "aufx" and c["subtype"] == "Snpt" and c["manufacturer"] == "Nytr" and c["name"] == ("Nytro Audio: Capture" if version_tuple >= (1, 0, 0) else "Nytro Audio: Snapture") for c in components)
     subprocess.run(["codesign", "--verify", "--deep", "--strict", str(bundle)], check=True)
     binary = bundle / "Contents/MacOS/Snapture"
     assert "arm64" in subprocess.check_output(["lipo", "-archs", str(binary)], text=True).split()
