@@ -1,0 +1,28 @@
+name: Publish Snapture update
+on:
+  push:
+    branches: [main]
+    paths: ['r-91f27ac004f8/p-91f27ac004f8-*.zip']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: snapture-update-channel
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Verify AU and prepare title-case channel
+        run: python3 .github/scripts/publish_snapture.py
+      - name: Activate verified update
+        run: |
+          git config user.name "Snapture releases"
+          git config user.email "snapture-releases@users.noreply.github.com"
+          git add r-91f27ac004f8/latest-snapture.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Publish verified Snapture update"
+          git push origin HEAD:main
