@@ -2,6 +2,6 @@
   "status": "pending",
   "product": "SNAPTURE",
   "channel": "stable",
-  "version": "0.3.0",
-  "message": "No signed arm64 update published yet. Do not install untested components."
+  "version": "0.3.1",
+  "message": "Mac arm64 binary pending native build and Logic verification; no update will be offered."
 }
