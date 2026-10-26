@@ -1,0 +1,7 @@
+{
+  "status": "pending",
+  "product": "SNAPTURE",
+  "channel": "stable",
+  "version": "0.3.0",
+  "message": "No signed arm64 update published yet. Do not install untested components."
+}
