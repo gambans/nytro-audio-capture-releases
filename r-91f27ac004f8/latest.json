@@ -2,6 +2,6 @@
   "status": "pending",
   "product": "SNAPTURE",
   "channel": "stable",
-  "version": "0.3.1",
-  "message": "Mac arm64 binary pending native build and Logic verification; no update will be offered."
+  "version": "0.3.2",
+  "message": "SNAPTURE compact capture UI source committed. No tested macOS arm64 component has been published yet."
 }
